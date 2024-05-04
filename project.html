@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        :root {
+            font-family: sans-serif;
+        }
+
+        body {
+            background-image: url(https://i.pinimg.com/originals/82/7f/50/827f5082edefa03deaa546923e6971a1.jpg);
+            background-size: 100% 28%;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            padding-top: 20px;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+            margin: auto;
+            width: 1150px;
+            height: 12vh;
+            background-color: rgb(206, 224, 224);
+            padding-right: 30px;
+        }
+
+        .navbar li {
+            list-style: none;
+        }
+
+        .navbar ul a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(58, 82, 75);
+        }
+
+        .company {
+            margin-right: 200px;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: rgb(58, 82, 75);
+        }
+
+        .company img {
+            width: 70px;
+            height: 70px;
+            padding-right: 20px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search input {
+            border: 2px solid rgb(138, 138, 233);
+            margin-left: -200px;
+            width: 400px;
+            height: 30px;
+            border-radius: 10px;
+            padding-left: 10px;
+            color: rgb(58, 82, 75);
+        }
+
+        .con {
+            margin-top: 170px;
+        }
+
+        .con h4 {
+            font-size: 28px;
+            font-weight: 800;
+            color: rgb(236, 233, 240);
+            background-color: rgb(48, 44, 73);
+            width: 50vw;
+            margin: auto;
+            opacity: 0.5;
+        }
+
+        .search2 {
+            margin-top: 20px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search2 input {
+            width: 340px;
+            height: 30px;
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid rgb(138, 138, 233);
+        }
+
+        .search2 button {
+            width: 70px;
+            height: 30px;
+            border-radius: 20px;
+            border: 1px solid white;
+            background-image: radial-gradient(rgb(141, 141, 210), rgb(71, 79, 91));
+            color: white;
+            cursor: pointer;
+        }
+
+        .main-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 80px;
+            margin-top: 140px;
+        }
+
+        .box {
+            width: 230px;
+            height: 130px;
+            background-color: white;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 6px 6px rgba(190, 186, 186, 0.616);
+        }
+
+        .box img {
+            width: 105px;
+            height: 60px;
+        }
+
+        .box h5 {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(35, 28, 35, 0.863);
+        }
+        .box:hover {
+            background-color: #f0f0f0; 
+        }
+        .last {
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            padding: 100px;
+        }
+
+        .listings {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .listing {
+            margin-top: 10px;
+            border: 1px solid rgb(58, 82, 75);
+            padding: 20px;
+        }
+
+        .listings img {
+            width: 300px;
+            height: 150px;
+        }
+
+        .listing h3 {
+            margin-top: 20px;
+        }
+
+        .listing p {
+            margin-top: 20px;
+        }
+
+        .about-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-content {
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hover Effects */
+
+        /* Navbar Links */
+        .navbar ul a:hover {
+            color: rgb(58, 82, 75);
+        }
+
+        /* Buttons */
+        .search2 button:hover,
+        .listing button:hover {
+            background-image: radial-gradient(rgb(71, 79, 91), rgb(141, 141, 210));
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        /* Box Images */
+        .box img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Listing Buttons */
+        .listing button:hover {
+            background-color: rgb(58, 82, 75);
+            color: white;
+            border: 2px solid transparent;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <div class="company">
+                <img src="https://cdn-icons-png.flaticon.com/128/14035/14035666.png" alt="">
+                <div>SmartProperty.com</div>
+            </div>
+            <li><a href="page14.html">Home</a></li>
+            <li><a href="page12.html">About</a></li>
+            <li><a href="page13.html">Contact us</a></li>
+        </ul>
+    </div>
+    <center>
+        <div class="con">
+            <div>
+                <h4>FIND YOUR PERFECT DREAM HOUSE</h4>
+            </div>
+        </div>
+    </center>
+
+
+    <div class="main-box">
+        <div class="box" id="box1">
+            <a href="page8.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/2815/2815169.png" alt="">
+                <h5>New Properties</h5>
+            </a>
+        </div>
+        <div class="box" id="box2">
+            <a href="page7.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/2894/2894863.png" alt="">
+                <h5>sell your property</h5>
+            </a>
+        </div>
+
+
+        <div class="box" id="box3">
+            <a href="page9.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/3616/3616413.png" alt="">
+                <h5>Building For Sale</h5>
+            </a>
+        </div>
+        <div class="box" id="box4">
+            <a href="page11.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/8813/8813867.png" alt="">
+                <h5>House For Sale</h5>
+            </a>
+        </div>
+    </div>
+    <div class="last">
+        <section class="listings">
+            <h2>Featured Listings</h2>
+            <div class="listing">
+                <img src="https://housing-images.n7net.in/01c16c28/9f7144dfd047b9a470ccb2102746029e/v0/fs/1_bhk_independent_builder_floor-for-rent-syamala_nagar-Guntur-others.jpg" alt="Property Image">
+                <h3>1 bhk flat</h3>
+                <p>Rs.12000</p>
+                <a href="page1.html"><button>View Details</button></a>
+            </div>
+        </section>
+        <section class="listings">
+            <h2>Featured Listings</h2>
+            <div class="listing">
+                <img src="https://housing-images.n7net.in/01c16c28/5b0358ddcd5e3078557b06d2363b3580/v0/fs/2_bhk_apartment-for-rent-nallapadu_rural-Guntur-plot_view.jpg" alt="Property Image">
+                <h3>2 bhk flat</h3>
+                <p>Rs.20000</p>
+                <a href="page2.html"><button>View Details</button></a>
+            </div>
+        </section>
+
+        <section class="listings">
+            <h2>Featured Listings</h2>
+            <div class="listing">
+                <img src="https://img.staticmb.com/mbimages/project/2023/06/12/Project-Photo-16-Risland-Sky-Mansion-New-Delhi-5129227_600_800.jpg" alt="Image" width="300" height="150">
+                <h3>3 bhk flat</h3>
+                <p>Rs.50000</p>
+                <a href="page3.html"><button>View Details</button></a>
+            </div>
+        </section>
+        <section class="listings">
+            <h2>Featured Listings</h2>
+            <div class="listing">
+                <img src="https://img.staticmb.com/mbphoto/property/cropped_images/2023/Oct/13/Photo_h0_w320/253_IMG8613_0_320.jpeg" alt="Property Image" width="300" height="150">
+                <h3>Shop for sale</h3>
+                <p> Rs.10,919 per sqfeet</p>
+                <a href="page4.html"><button>View Details</button></a>
+            </div>
+        </section>
+        <section class="listings">
+            <h2>Featured Listings</h2>
+            <div class="listing">
+                <img src="https://img.staticmb.com/mbphoto/property/cropped_images/2024/Jan/24/Photo_h0_w320/71049327_2_02401231124000_0_320.jpg" alt="Property Image" width="300" height="150">
+                <h3>Land for sale</h3>
+                <p>Rs.1,755 per sqfeet</p>
+                <a href="page5.html"><button>View Details</button></a>
+            </div>
+        </section>
+        <section class="listings">
+            <h2>Featured Listings</h2>
+            <div class="listing">
+                <img src="https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/images/8mf0x1k8_optOrig.jpg" alt="Property Image" width="300" height="150">
+                <h3>Green Grace Apartment</h3>
+                <p>Rs.79 lacs</p>
+                <a href="page6.html"><button>View Details</button></a>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Real Estate Project. All Rights Reserved.</p>
+        <p>Designed and Developed by <a href="https://example.com">Your Company</a></p>
+        <p>Contact: <a href="tel:+1234567890">+1 (234) 567-890</a> | <a href="mailto:info@example.com">info@example.com</a></p>
+    </footer>
+</body>
+</html>

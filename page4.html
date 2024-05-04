@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <style>
+        :root {
+            font-family: sans-serif;
+            min-height: 100%;
+            position: relative;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Add styles for grid and column view */
+        #property-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        #property-images.column-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #property-images img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<main>
+<button onclick="viewDetails()">View Details</button>
+<button onclick="toggleView()">Toggle View</button>
+<div id="property-images"></div>
+<h4>NAME: Sundar</h4>
+<h4>Phone number:98*********</h4>
+<h4>Super Area 16,500sqft
+    <h4>₹10,909/sqft</h4>
+        <h4>Carpet Area 14,375</h4>
+            <h4>sqft ₹12,522/sqft</h4>
+                <h4>Floor 1 (Out of 5 Floors)</h4>
+                    <h4>Property Age New Construction</h4>
+                        <h4>Units On Floor 1</h4>
+                            <h4>Lift 1</h4>
+                            <h4>Bedroom-5</h4>
+                            <h4>play area-340 sqfeet</h4>
+                                <h4>Washroom 10</h4>
+                                <h4>kitchen-5</h4>
+</main>
+<footer class="footer">
+    <p>&copy; 2024 Real Estate Project. All Rights Reserved.</p>
+    <p>Designed and Developed by <a href="https://example.com">Your Company</a></p>
+    <p>Contact: <a href="tel:+1234567890">+1 (234) 567-890</a> | <a href="mailto:info@example.com">info@example.com</a></p>
+</footer>
+<script>
+    var gridLayout = true;
+
+    // Function to toggle between grid and column view
+    function toggleView() {
+        var propertyImages = document.getElementById('property-images');
+        if (gridLayout) {
+            propertyImages.classList.remove('column-view');
+        } else {
+            propertyImages.classList.add('column-view');
+        }
+        gridLayout = !gridLayout;
+    }
+
+    // Function to display property images
+    function viewDetails() {
+        // Get the image source URLs
+        var imageUrls = [
+           "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Oct/13/Photo_h0_w320/1535_IMG8610_0_320.jpeg",
+           "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Oct/13/Photo_h0_w320/6571_IMG8602_0_320.jpeg",
+           "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Oct/13/Photo_h0_w320/717_IMG8600_0_320.jpeg",
+           "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Oct/13/Photo_h0_w320/6867_IMG8608_0_320.jpeg",
+           "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Oct/13/Photo_h0_w320/3721_IMG8616_0_320.jpeg",
+           "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Oct/13/Photo_h0_w320/253_IMG8613_0_320.jpeg",
+           "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Oct/13/Photo_h0_w320/3600_IMG8618_0_320.jpeg",
+        ];
+
+        // Clear previous images
+        document.getElementById('property-images').innerHTML = '';
+
+        // Display the images on the page
+        imageUrls.forEach(function (url) {
+            var imageElement = document.createElement('img');
+            imageElement.src = url;
+            imageElement.alt = "Property Image";
+            document.getElementById('property-images').appendChild(imageElement);
+        });
+    }
+</script>
+
+</body>
+</html>

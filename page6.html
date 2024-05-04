@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <style>
+         .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Add styles for grid and column view */
+        #property-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        #property-images.column-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #property-images img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<main>
+<button onclick="viewDetails()">View Details</button>
+<button onclick="toggleView()">Toggle View</button>
+<div id="property-images"></div>
+<pre><h2>
+Owner name:PREM SINGH
+Phone number:98*********
+3 Bhk Apartment
+Built-up Area
+1450 - 3150 sq.ft
+gazebo
+Banquet Hall
+cricket_pitch
+Toddler Pool
+party_lawn
+Table Tennis
+basketball_court
+Basketball Court
+entrance_lobby
+Entrance Lobby
+multi_purpose_room
+Multipurpose Hall
+meditation
+Yoga/Meditation Area
+indoor_games
+jogging_track
+security_24x7
+24x7 Security
+club</h2></pre>
+</main>
+<footer class="footer">
+    <p>&copy; 2024 Real Estate Project. All Rights Reserved.</p>
+    <p>Designed and Developed by <a href="https://example.com">Your Company</a></p>
+    <p>Contact: <a href="tel:+1234567890">+1 (234) 567-890</a> | <a href="mailto:info@example.com">info@example.com</a></p>
+</footer>
+<body>
+<script>
+    var gridLayout = true;
+
+    // Function to toggle between grid and column view
+    function toggleView() {
+        var propertyImages = document.getElementById('property-images');
+        if (gridLayout) {
+            propertyImages.classList.remove('column-view');
+        } else {
+            propertyImages.classList.add('column-view');
+        }
+        gridLayout = !gridLayout;
+    }
+
+    // Function to display property images
+    function viewDetails() {
+        // Get the image source URLs
+        var imageUrls = [
+            "https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/images/vavadgx3_optOrig.jpg",
+            "https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/images/hmqlumuu_optOrig.jpg",
+            "https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/images/msh08f3q_optOrig.jpg",
+            "https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/images/zq1865y7_optOrig.jpg",
+            "https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/images/5qtwhpf1_optOrig.jpg",
+            "https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/images/p1on38v8_optOrig.jpg",
+            "https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/images/za4fhu6m_optOrig.jpg",
+            "https://newprojects.99acres.com/projects/bajrang_urban_infra/bajrang_green_grace/maps/1tcwg6qq.jpg",
+        ];
+
+        // Clear previous images
+        document.getElementById('property-images').innerHTML = '';
+
+        // Display the images on the page
+        imageUrls.forEach(function (url) {
+            var imageElement = document.createElement('img');
+            imageElement.src = url;
+            imageElement.alt = "Property Image";
+            document.getElementById('property-images').appendChild(imageElement);
+        });
+    }
+</script>
+
+
+</body>
+</html>

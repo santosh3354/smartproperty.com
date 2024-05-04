@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        :root {
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: rgba(223, 228, 183, 0.443);
+        }
+
+        .navbar {
+            padding-top: 20px;
+        }
+
+        .navbar ul {
+            /* border: 2px solid blue; */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+            margin: auto;
+            width: 1150px;
+            height: 12vh;
+            background-color: rgb(206, 224, 224);
+            padding-right: 30px;
+        }
+
+        .navbar li {
+            list-style: none;
+        }
+
+        .navbar ul a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(58, 82, 75);
+        }
+
+        .company {
+            margin-right: 200px;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: rgb(58, 82, 75);
+        }
+
+        .company img {
+            width: 70px;
+            height: 70px;
+            padding-right: 20px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search input {
+            border: 2px solid rgb(138, 138, 233);
+            margin-left: -200px;
+            width: 400px;
+            height: 30px;
+            border-radius: 10px;
+            padding-left: 10px;
+            color: rgb(58, 82, 75);
+        }
+
+        .comb {
+            /* border: 2px solid red; */
+            display: flex;
+            position: relative;
+            margin-top: 120px;
+        }
+
+        .card1 {
+            /* border: 2px solid blue; */
+            /* margin-left: 100px; */
+            padding: 20px;
+            /* box-shadow: 0px 4px 4px 0px rgb(130, 99, 104); */
+            background-color: white;
+            margin-left: 200px;
+            border-radius: 10px;
+        }
+
+        .card-left {
+            /* border: 2px solid green; */
+            position: absolute;
+            top: 0px;
+            right: 200px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .card-left h2 {
+            color: rgb(43, 43, 3);
+            font-weight: 600;
+        }
+
+        .card-left h4 {
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .card-left button {
+            margin-top: 20px;
+            height: 40px;
+            width: 120px;
+            font-weight: 600;
+            background-color: crimson;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .price-con {
+            /* border:2px solid rebeccapurple; */
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            font-weight: 700;
+            color: rgb(79, 81, 34);
+        }
+
+        .card1 h4 {
+            font-size: 20px;
+            color: rgb(58, 82, 75);
+        }
+
+        .card1 img {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 4px 0px rgb(130, 99, 104);
+        }
+
+        .bs {
+            margin-top: 20px;
+            display: flex;
+            gap: 70px;
+        }
+
+    
+
+        .card2 {
+            /* border: 2px solid blue; */
+            width: 60vw;
+            margin-top: 50px;
+            margin-left: 200px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .card2-inn {
+            display: flex;
+            gap: 50px;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        #price-break #pr {
+            margin-left: 20px;
+            font-weight: 400;
+        }
+
+        #pr2 {
+            font-weight: 400;
+        }
+
+        #add {
+            margin-left: 62px;
+            font-weight: 400;
+        }
+
+        #ex {
+            margin-top: 10px;
+        }
+
+        #fur {
+            margin-left: 43px;
+            font-weight: 400;
+        }
+
+        .card2-button {
+            margin-top: 40px;
+        }
+
+        .cards {
+            width: 73vw;
+            margin: 60px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .c {
+            border: 1px solid rgb(58, 82, 75);
+        }
+
+        .cards img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .cards table {
+            /* border: 2px solid blue; */
+            padding: 10px;
+        }
+
+        .cards td {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+       
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <div class="company">
+                <img src="https://cdn-icons-png.flaticon.com/128/13084/13084863.png" alt="">
+                <div>RealEstate.com</div>
+            </div>
+           
+        </ul>
+    </div>
+    <div class="comb">
+        <div class="card1">
+            <div class="price-con">
+                <div class="price">Rs.40 Lakhs</div>
+                <div class="emi">EMI - Rs.1 Lakhs</div>
+                <div>| How much loan can I get?</div>
+            </div>
+            <h4>Shop, Bare shell Office Space in Sector 140A Noida</h4>
+            <div class="main-section">
+                <img src="https://newprojects.99acres.com/projects/fairfox_itinfra/fairfox_eon/images/59wgxhdu_optOrig.jpg" width="400" height="250"
+                    alt="">
+            </div>
+            <div class="bs">
+                <div class="contact">
+                   
+                </div>
+                <div class="phone-num">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-left">
+            <h2>Contact Owner</h2>
+            <h4>Mukesh kumar +92xxxxxxxx</h4>
+            
+        </div>
+    </div>
+    <div class="card2">
+        <h2>More Details</h2>
+        <div class="card2-inn" id="price-break">
+            <h4>Price Breakup</h4>
+            <h4 id="pr">Rs.50 lac</h4>
+        </div>
+        <div class="card2-inn" id="booking-amount">
+            <h4>Booking Amount</h4>
+            <h4 id="pr2">Rs.30 lacs</h4>
+        </div>
+        <div class="card2-inn" id="address">
+            <h4>Address</h4>
+            <h4 id="add">Shop, Bare shell Office Space in Sector 140A Noida
+            </h4>
+        </div>
+        <div class="card2-inn" id="furnishing">
+            <h4>Furnishing</h4>
+            <h4 id="fur">Semi-Furnished</h4>
+        </div>
+       
+    </div>
+    <div class="cards">
+        <div class="c" id="c1">
+            <div class="img1">
+                <img src="https://newprojects.99acres.com/projects/fairfox_itinfra/fairfox_eon/images/tkphn0g3_optOrig.jpg"
+                    alt="">
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        Place
+                    </td>
+                    <td>
+                        3 sector
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Area
+                    </td>
+                    <td>
+                        2000sq Units
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Rooms
+                    </td>
+                    <td>
+                        50
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="c" id="c2">
+            <div class="img1">
+                <img src="https://newprojects.99acres.com/projects/fairfox_itinfra/fairfox_eon/maps/5nuuxxzz.jpg"
+                    alt="">
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        Road
+                    </td>
+                    <td>
+                        6m wide road
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    facility
+                    </td>
+                    <td>
+                        atrium,gym..
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Furnishing
+                    </td>
+                    <td>
+                        Fully Furnished
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="c" id="c3">
+            <div class="img1">
+                <img src="https://newprojects.99acres.com/projects/fairfox_itinfra/fairfox_eon/images/wk9yy43z_optOrig.jpg"
+                    alt="">
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        Place
+                    </td>
+                    <td>
+                        Cafeteria
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Area
+                    </td>
+                    <td>
+                        1200sq Units
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Furnishing
+                    </td>
+                    <td>
+                        Fully Furnished
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 Real Estate Project. All Rights Reserved.</p>
+            <p>Designed and Developed by <a href="https://example.com">Your Company</a></p>
+            <p>Contact: <a href="tel:+1234567890">+1 (234) 567-890</a> | <a href="mailto:info@example.com">info@example.com</a></p>
+        </footer>
+</body>
+
+</html>

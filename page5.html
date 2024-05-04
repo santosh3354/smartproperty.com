@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <style>
+        :root {
+            font-family: sans-serif;
+            min-height: 100%;
+            position: relative;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Add styles for grid and column view */
+        #property-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        #property-images.column-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #property-images img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<main>>
+<button onclick="viewDetails()">View Details</button>
+<button onclick="toggleView()">Toggle View</button>
+<div id="property-images"></div>
+<h4>OWNER NAME:Prudhvi</h4>
+<h4>Phone number:98*********</h4>
+<h4>Ibrahimpatnam Cir Vijayawada</h4>
+<h4>Plot area:20,354 sqfeet</h4>
+
+</main>
+<script>
+    var gridLayout = true;
+
+    // Function to toggle between grid and column view
+    function toggleView() {
+        var propertyImages = document.getElementById('property-images');
+        if (gridLayout) {
+            propertyImages.classList.remove('column-view');
+        } else {
+            propertyImages.classList.add('column-view');
+        }
+        gridLayout = !gridLayout;
+    }
+    // Function to display property images
+    function viewDetails() {
+        // Get the image source URLs
+        var imageUrls = [
+        "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Jan/24/Photo_h0_w320/71049327_2_02401231124000_0_320.jpg",
+        "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Jan/24/Photo_h0_w320/71049327_1_0240123112341_0_320.jpg",
+        "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Jan/24/Photo_h0_w320/71049327_3_0240123112356_0_320.jpg",
+        "https://img.staticmb.com/mbphoto/property/cropped_images/2024/Jan/24/Photo_h0_w320/71049327_4_0240123112339_0_320.jpg",
+           ];
+
+        // Clear previous images
+        document.getElementById('property-images').innerHTML = '';
+
+        // Display the images on the page
+        imageUrls.forEach(function (url) {
+            var imageElement = document.createElement('img');
+            imageElement.src = url;
+            imageElement.alt = "Property Image";
+            document.getElementById('property-images').appendChild(imageElement);
+        });
+    }
+</script><footer class="footer">
+    <p>&copy; 2024 Real Estate Project. All Rights Reserved.</p>
+    <p>Designed and Developed by <a href="https://example.com">Your Company</a></p>
+    <p>Contact: <a href="tel:+1234567890">+1 (234) 567-890</a> | <a href="mailto:info@example.com">info@example.com</a></p>
+</footer>
+
+</body>
+</html>

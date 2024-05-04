@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <style>
+        :root {
+            font-family: sans-serif;
+            min-height: 100%;
+            position: relative;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Add styles for grid and column view */
+        #property-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        #property-images.column-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #property-images img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<main>
+<button onclick="viewDetails()">View Details</button>
+<button onclick="toggleView()">Toggle View</button>
+<div id="property-images"></div>
+<h4>OWNER NAME: Avinash</h4>
+<h4>Phone number:98*********</h4>
+<h4>PROJECT NAME:Risland Sky Mansion</h4>
+<h4>Address: chhattarpur,new Delhi</h4>
+<h4>Low Density Living for Limited 160 Families</h4>
+    <h4>700 Acres of Lifelong Greens</h4>
+        <h4>Only Triplex Penthouse in Delhi</h4>
+            <h4>100% Structure Completed</h4>
+                <h4>5-Tier security</h4>
+                    <h4>2 Apartments per Floor</h4>
+                        <h4>3.6 Mtr Ceiling Height In All The Apartments</h4>
+                            <h4>Fully fitted Digital Secure Homes</h4>
+                                <h4>500+ International Sized Covered Car Parks</h4>
+                                          <h4>1 Lac Sqft of Club & Recreational Area</h4>
+                                          </main>
+                                          <footer class="footer">
+                                            <p>&copy; 2024 Real Estate Project. All Rights Reserved.</p>
+                                            <p>Designed and Developed by <a href="https://example.com">Your Company</a></p>
+                                            <p>Contact: <a href="tel:+1234567890">+1 (234) 567-890</a> | <a href="mailto:info@example.com">info@example.com</a></p>
+                                        </footer>
+
+<script>
+    var gridLayout = true;
+
+    // Function to toggle between grid and column view
+    function toggleView() {
+        var propertyImages = document.getElementById('property-images');
+        if (gridLayout) {
+            propertyImages.classList.remove('column-view');
+        } else {
+            propertyImages.classList.add('column-view');
+        }
+        gridLayout = !gridLayout;
+    }
+
+    // Function to display property images
+    function viewDetails() {
+        // Get the image source URLs
+        var imageUrls = [
+        "https://housing-images.n7net.in/012c1500/480328215dcbf77abc6d526435b7a003/v0/fs.jpeg",
+        "https://housing-images.n7net.in/012c1500/57e6f1fb0067368a7d4e0b600d2a8c2c/v0/fs.jpeg",
+        "https://housing-images.n7net.in/012c1500/e252c6646f4d3179fa24f3f56d7104dd/v0/fs.jpeg",
+        "https://housing-images.n7net.in/012c1500/fdb9aeb2cfc02e8428f8285e07dd8d0c/v0/fs.jpeg",
+        "https://housing-images.n7net.in/012c1500/07028c363a17ff9899cdf6c3f15474fb/v0/fs.jpeg",
+        "https://housing-images.n7net.in/012c1500/2411bb7cb691e5cca8a14c627cfa849f/v0/fs.jpeg",
+        "https://housing-images.n7net.in/012c1500/7e0c8979df6980f81f218c0dfe8aa290/v0/fs.jpeg",
+        "https://housing-images.n7net.in/012c1500/ea5096447a603c543022056f3fad2ccb/v0/fs.jpeg",
+             ];
+
+        // Clear previous images
+        document.getElementById('property-images').innerHTML = '';
+
+        // Display the images on the page
+        imageUrls.forEach(function (url) {
+            var imageElement = document.createElement('img');
+            imageElement.src = url;
+            imageElement.alt = "Property Image";
+            document.getElementById('property-images').appendChild(imageElement);
+        });
+    }
+</script>
+
+
+</body>
+</html>
